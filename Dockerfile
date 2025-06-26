@@ -1,16 +1,18 @@
 FROM node:20-alpine
 
-RUN apk add --no-cache curl
+RUN apk add --no-cache curl \
+  && corepack enable \
+  && corepack prepare pnpm@latest --activate
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY pnpm-lock.yaml package.json ./
 
-RUN npm install
+RUN pnpm install --frozen-lockfile
 
 COPY . .
 
-RUN npm run build
+RUN pnpm run build
 
 EXPOSE 3000
 
