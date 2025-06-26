@@ -1,8 +1,8 @@
 import express from 'express';
-import { getAllLogs } from '../controllers/logController';
+import { getAbout } from '../controllers/aboutController';
 
 const router = express.Router();
 
-router.get('/', getAllLogs);
+router.get('/', getAbout);
 
 export default router;
