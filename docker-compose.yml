@@ -1,0 +1,17 @@
+services:
+  api:
+    build: .
+    container_name: sierrapablo-portfolio-api
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    depends_on:
+      - db
+    command: sh -c "npm run build && node dist/index.js"
+    networks:
+      - reverse-proxy
+
+networks:
+  reverse-proxy:
+    external: true
