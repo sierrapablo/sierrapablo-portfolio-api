@@ -12,12 +12,12 @@ const app = express();
 
 const allowedOrigins = [
   'https://sierrapablo.dev',
-  'https://www.sierrapablo.dev'
+  'https://www.sierrapablo.dev',
 ];
 
 app.use(
   cors({
-    origin: allowedOrigins,
+    origin: '*',
     methods: ['GET'],
     allowedHeaders: ['Content-Type'],
   })
