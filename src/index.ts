@@ -10,9 +10,14 @@ import aboutRoutes from './routes/aboutRoutes';
 dotenv.config();
 const app = express();
 
+const allowedOrigins = [
+  'https://sierrapablo.dev',
+  'https://www.sierrapablo.dev'
+];
+
 app.use(
   cors({
-    origin: '*',
+    origin: allowedOrigins,
     methods: ['GET'],
     allowedHeaders: ['Content-Type'],
   })
