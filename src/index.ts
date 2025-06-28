@@ -7,6 +7,7 @@ import toolsRoutes from './routes/toolsRoutes';
 import messagesRoutes from './routes/messagesRoutes';
 import aboutRoutes from './routes/aboutRoutes';
 import projectsRoutes from './routes/projectsRoutes';
+import postsRoutes from './routes/postsRoutes';
 
 dotenv.config();
 const app = express();
@@ -31,6 +32,7 @@ app.use('/tools', toolsRoutes);
 app.use('/messages', messagesRoutes);
 app.use('/about', aboutRoutes);
 app.use('/projects', projectsRoutes);
+app.use('/posts', postsRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
